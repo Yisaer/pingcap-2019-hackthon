@@ -30,6 +30,10 @@ spec:
       port: 2380
       protocol: TCP
       targetPort: 2380
+    - name: pd-client
+      port: 2379
+      protocol: TCP
+      targetPort: 2379
     - name: tikv-peer
       protocol: TCP
       port: 20160
@@ -48,7 +52,7 @@ metadata:
   namespace: test
 spec:
 #  podManagementPolicy: Parallel
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app.kubernetes.io/instance: test
@@ -81,9 +85,9 @@ spec:
               value: demo-peer
             - name: TZ
               value: UTC
-          # image: pingcap/pd:v3.0.4
-          image: docker.pkg.github.com/tennix/pd/hackathon:v0.1.0
-          # imagePullPolicy: IfNotPresent
+          image: pingcap/pd:v3.0.4
+          # image: docker.pkg.github.com/tennix/pd/hackathon:v0.1.1
+          imagePullPolicy: IfNotPresent
           name: pd
           ports:
             - containerPort: 2380
