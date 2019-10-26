@@ -48,7 +48,7 @@ metadata:
   namespace: test
 spec:
 #  podManagementPolicy: Parallel
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/instance: test
@@ -83,7 +83,7 @@ spec:
               value: UTC
           # image: pingcap/pd:v3.0.4
           image: docker.pkg.github.com/tennix/pd/hackathon:v0.1.0
-          imagePullPolicy: IfNotPresent
+          # imagePullPolicy: IfNotPresent
           name: pd
           ports:
             - containerPort: 2380
