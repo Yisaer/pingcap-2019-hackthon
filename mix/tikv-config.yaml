@@ -9,7 +9,7 @@ data:
     \   exit 1\nfi\nsource ${ANNOTATIONS} 2>/dev/null\n\nrunmode=${runmode:-normal}\nif
     [[ X${runmode} == Xdebug ]]\nthen\n\techo \"entering debug mode.\"\n\ttail -f
     /dev/null\nfi\n\nSCHEME=\"http\"\n\n# Use HOSTNAME if POD_NAME is unset for backward
-    compatibility.\nPOD_NAME=${POD_NAME:-$HOSTNAME}\nARGS=\"--pd=${SCHEME}://demo-pd:2379
+    compatibility.\nPOD_NAME=${POD_NAME:-$HOSTNAME}\nARGS=\"--pd=${SCHEME}://localhost:2379
     \\\n--advertise-addr=${POD_NAME}.${HEADLESS_SERVICE_NAME}.${NAMESPACE}.svc:20160
     \\\n--addr=0.0.0.0:20160 \\\n--status-addr=0.0.0.0:20180 \\\n--data-dir=/var/lib/tikv
     \\\n--capacity=${CAPACITY} \\\n--config=/etc/tikv/tikv.toml\n\"\n\necho \"starting
