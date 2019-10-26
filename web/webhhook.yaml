@@ -13,7 +13,7 @@ rules:
     resources: ["tidbclusters"]
     verbs: ["get"]
   - apiGroups: [""]
-    resources: ["service"]
+    resources: ["services"]
     verbs: ["create","delete"]
 ---
 apiVersion: v1
