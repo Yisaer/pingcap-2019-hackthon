@@ -74,7 +74,7 @@ spec:
       serviceAccountName: admission-controller-sa
       containers:
         - name: admission-controller
-          image: yisayisa/webhook:0.1.5
+          image: yisayisa/webhook:0.1.6
           imagePullPolicy: IfNotPresent
           command:
             - /usr/local/bin/tidb-admission-controller
