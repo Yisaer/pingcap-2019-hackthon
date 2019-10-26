@@ -14,7 +14,7 @@ rules:
     verbs: ["get"]
   - apiGroups: [""]
     resources: ["services"]
-    verbs: ["create","delete"]
+    verbs: ["create","delete","get"]
 ---
 apiVersion: v1
 kind: ServiceAccount
