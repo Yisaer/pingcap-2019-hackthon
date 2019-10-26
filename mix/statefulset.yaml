@@ -81,7 +81,7 @@ spec:
               value: demo-peer
             - name: TZ
               value: UTC
-          image: pingcap/pd:v3.0.4
+          image: docker.pkg.github.com/tennix/pd/hackathon:v0.1.0
           imagePullPolicy: IfNotPresent
           name: pd
           ports:
