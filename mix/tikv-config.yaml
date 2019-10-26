@@ -4,7 +4,7 @@ data:
   startup-script: "#!/bin/sh\n\n# This script is used to start tikv containers in
     kubernetes cluster\n\n# Use DownwardAPIVolumeFiles to store informations of the
     cluster:\n# https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/#the-downward-api\n#\n#
-    \  runmode=\"normal/debug\"\n#\n\nset -uo pipefail\nsleep 10\n\n\nANNOTATIONS=\"/etc/podinfo/annotations\"\n\nif
+    \  runmode=\"normal/debug\"\n#\n\nset -uo pipefail\nsleep 30\n\n\nANNOTATIONS=\"/etc/podinfo/annotations\"\n\nif
     [[ ! -f \"${ANNOTATIONS}\" ]]\nthen\n    echo \"${ANNOTATIONS} does't exist, exiting.\"\n
     \   exit 1\nfi\nsource ${ANNOTATIONS} 2>/dev/null\n\nrunmode=${runmode:-normal}\nif
     [[ X${runmode} == Xdebug ]]\nthen\n\techo \"entering debug mode.\"\n\ttail -f
